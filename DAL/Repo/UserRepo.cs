@@ -33,12 +33,17 @@ namespace DAL.Repo
 
         public bool Edit(User obj)
         {
-            throw new NotImplementedException();
+            var p = db.Users.FirstOrDefault(en => en.UserId == obj.UserId);
+            db.Entry(p).CurrentValues.SetValues(obj.UserId);
+            return db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var c = db.Users.FirstOrDefault(e => e.UserId == id);
+            if (c == null) return false;
+            db.Users.Remove(c);
+            return true;
         }
 
         public bool Authenticate(string uname, string pass)

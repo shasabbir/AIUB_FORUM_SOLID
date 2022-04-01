@@ -1,7 +1,9 @@
 ﻿using DAL;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using BLL.Entities;
+using DAL.Database;
 
 namespace BLL.Services
 {
@@ -47,6 +49,12 @@ namespace BLL.Services
                 UserType = s.UserType
             }).ToList();
 
+        }
+        public static List<UserModel> GetAll() {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<User, UserModel>());
+            var mapper = new Mapper(config);
+            var data = mapper.Map<List<UserModel>>(DataAccessFactory.UserDataAccess().Get());
+            return data;
         }
     }
 }
