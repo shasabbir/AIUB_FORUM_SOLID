@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIUB Forum API", "AIUB Forum API\AIUB Forum API.csproj", "{2EAFABE9-BAC6-48F4-99E0-A4EC5B693D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{733C30FC-C057-4BCF-910C-49B98CE01A8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EAFABE9-BAC6-48F4-99E0-A4EC5B693D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAFABE9-BAC6-48F4-99E0-A4EC5B693D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAFABE9-BAC6-48F4-99E0-A4EC5B693D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAFABE9-BAC6-48F4-99E0-A4EC5B693D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{733C30FC-C057-4BCF-910C-49B98CE01A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733C30FC-C057-4BCF-910C-49B98CE01A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733C30FC-C057-4BCF-910C-49B98CE01A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733C30FC-C057-4BCF-910C-49B98CE01A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA6E1193-486E-499E-A936-0F33089637BF}
+	EndGlobalSection
+EndGlobal
