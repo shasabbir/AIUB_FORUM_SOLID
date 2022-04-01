@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIUB_ForumModelStoreContainer" CdmEntityContainer="AIUB_ForumEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswerComments">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerComment">
+        <MappingFragment StoreEntitySet="AnswerComments">
+          <ScalarProperty Name="AnsCmntId" ColumnName="AnsCmntId" />
+          <ScalarProperty Name="AnsId" ColumnName="AnsId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Answer">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="AnsId" ColumnName="AnsId" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="AnsUserId" ColumnName="AnsUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswerVotes">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerVote">
+        <MappingFragment StoreEntitySet="AnswerVotes">
+          <ScalarProperty Name="AnsVoteId" ColumnName="AnsVoteId" />
+          <ScalarProperty Name="AnsId" ColumnName="AnsId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Badges">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Badge">
+        <MappingFragment StoreEntitySet="Badges">
+          <ScalarProperty Name="BadgeId" ColumnName="BadgeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="JobPostCount" ColumnName="JobPostCount" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CDescription" ColumnName="CDescription" />
+          <ScalarProperty Name="CCategory" ColumnName="CCategory" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPosts">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.JobPost">
+        <MappingFragment StoreEntitySet="JobPosts">
+          <ScalarProperty Name="JPId" ColumnName="JPId" />
+          <ScalarProperty Name="JPCreationDate" ColumnName="JPCreationDate" />
+          <ScalarProperty Name="JPDeleteDate" ColumnName="JPDeleteDate" />
+          <ScalarProperty Name="Views" ColumnName="Views" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="PositonName" ColumnName="PositonName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moderators">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Moderator">
+        <MappingFragment StoreEntitySet="Moderators">
+          <ScalarProperty Name="ModeratorId" ColumnName="ModeratorId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AnswerCount" ColumnName="AnswerCount" />
+          <ScalarProperty Name="ComentsCount" ColumnName="ComentsCount" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AboutMe" ColumnName="AboutMe" />
+          <ScalarProperty Name="Views" ColumnName="Views" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Reputation" ColumnName="Reputation" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="ApplyCount" ColumnName="ApplyCount" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Votes">
+      <EntityTypeMapping TypeName="AIUB_ForumModel.Vote">
+        <MappingFragment StoreEntitySet="Votes">
+          <ScalarProperty Name="VoteId" ColumnName="VoteId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
