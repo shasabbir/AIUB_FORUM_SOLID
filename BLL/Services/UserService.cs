@@ -36,7 +36,21 @@ namespace BLL.Services
         }
         public static List<UserModel> Get() {
             var sts = DataAccessFactory.UserDataAccess().Get();
-            return sts.Select(s => new UserModel() {UserId = s.UserId,Username = s.Username,Email = s.Email, Password = s.Password}).ToList();
+            return sts.Select(s => new UserModel()
+            {
+                UserId = s.UserId,
+                Password = s.Password,
+                Username = s.Username,
+                Email = s.Email,
+                AboutMe = s.AboutMe,
+                ApplyCount = s.ApplyCount,
+                CreationDate = s.CreationDate,
+                CV = s.CV,
+                Location = s.Location,
+                ProfilePic = s.ProfilePic,
+                Reputation = s.Reputation,
+                UserType = s.UserType
+            }).ToList();
 
         }
     }
