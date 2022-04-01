@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace AIUB_Forum_API.Areas.HelpPage.ModelDescriptions
