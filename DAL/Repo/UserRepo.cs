@@ -45,9 +45,13 @@ namespace DAL.Repo
             return true;
         }
 
-        public bool Authenticate(string uname, string pass)
+        public bool Authenticate(string email, string pass)
         {
-            return true;
+            var data = (from e in db.Users
+                where e.Password.Equals(pass) &&
+                      e.Email.Equals(email)
+                select e).FirstOrDefault();
+            return data != null;
         }
     }
 }
