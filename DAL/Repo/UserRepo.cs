@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DAL.Repo
 {
-    public class UserRepo : IRepository<User, int>,IAuth
+    public class UserRepo : IRepositoryN<User, int>,IAuth
     {
         private AIUB_ForumEntities db;
       

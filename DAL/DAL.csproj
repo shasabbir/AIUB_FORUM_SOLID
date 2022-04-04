@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="DataAccessFactoryN.cs" />
     <Compile Include="Database\Admin.cs">
       <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
     </Compile>
@@ -104,7 +104,7 @@
       <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="IAuth.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IRepositoryN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AnswerCommentRepo.cs" />
     <Compile Include="Repo\AnswerRepo.cs" />

@@ -3,7 +3,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    public class JobRepo : IRepository<Job, int>
+    public class JobRepo : IRepositoryN<Job, int>
     {
         private AIUB_ForumEntities db;
 

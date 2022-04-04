@@ -3,41 +3,41 @@ using DAL.Repo;
 
 namespace DAL
 {
-    public class DataAccessFactory
+    public class DataAccessFactoryN
     {
         static AIUB_ForumEntities db = new AIUB_ForumEntities();
-        public static IRepository<User,int> UserDataAccess() {
+        public static IRepositoryN<User,int> UserDataAccess() {
             return new UserRepo(db);
         }
-        public static IRepository<Post, int> PostDataAccess()
+        public static IRepositoryN<Post, int> PostDataAccess()
         {
             return new PostRepo(db);
         }
-        public static IRepository<Comment, int> CommentDataAccess()
+        public static IRepositoryN<Comment, int> CommentDataAccess()
         {
             return new CommentRepo(db);
         }
-        public static IRepository<Company, int> CategoryDataAccess()
+        public static IRepositoryN<Company, int> CategoryDataAccess()
         {
             return new CompanyRepo(db);
         }
-        public static IRepository<Job, int> JobDataAccess()
+        public static IRepositoryN<Job, int> JobDataAccess()
         {
             return new JobRepo(db);
         }
-        public static IRepository<Answer, int> AnswerDataAccess()
+        public static IRepositoryN<Answer, int> AnswerDataAccess()
         {
             return new AnswerRepo(db);
         }
-        public static IRepository<AnswerComment, int> AnswerCommentDataAccess()
+        public static IRepositoryN<AnswerComment, int> AnswerCommentDataAccess()
         {
             return new AnswerCommentRepo(db);
         }
-        public static IRepository<Badge, int> BadgeDataAccess()
+        public static IRepositoryN<Badge, int> BadgeDataAccess()
         {
             return new BadgeRepo(db);
         }
-        public static IRepository<Vote, int> VoteDataAccess()
+        public static IRepositoryN<Vote, int> VoteDataAccess()
         {
             return new VoteRepo(db);
         }

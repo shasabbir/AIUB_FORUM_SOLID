@@ -4,7 +4,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    public class BadgeRepo:IRepository<Badge,int>
+    public class BadgeRepo:IRepositoryN<Badge,int>
     {
         private AIUB_ForumEntities db;
 

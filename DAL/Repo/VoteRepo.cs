@@ -4,7 +4,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    internal class VoteRepo : IRepository<Vote, int>
+    internal class VoteRepo : IRepositoryN<Vote, int>
     {
         private AIUB_ForumEntities db;
 
