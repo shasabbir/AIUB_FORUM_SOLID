@@ -1,9 +1,13 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace AIUB_Forum_API
+namespace AIUB_Forum_Backend
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

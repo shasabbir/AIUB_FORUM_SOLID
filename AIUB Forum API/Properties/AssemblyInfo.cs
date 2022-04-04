@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AIUB_Forum_API")]
+[assembly: AssemblyTitle("AIUB_Forum_Backend")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AIUB_Forum_API")]
+[assembly: AssemblyProduct("AIUB_Forum_Backend")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("602e71af-985d-4288-8bd3-ed8f5e28253c")]
+[assembly: Guid("005562e8-d991-40b0-8aa1-6894d66d5b8a")]
 
 // Version information for an assembly consists of the following four values:
 //

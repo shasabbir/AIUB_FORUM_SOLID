@@ -1,6 +1,7 @@
-﻿using System.Web.Optimization;
+﻿using System.Web;
+using System.Web.Optimization;
 
-namespace AIUB_Forum_API
+namespace AIUB_Forum_Backend
 {
     public class BundleConfig
     {
