@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIUB Forum API", "AIUB Forum API\AIUB Forum API.csproj", "{BF6A39E9-0727-45C6-989B-6511839CA6C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94F7BF08-E847-46AE-8A08-8DB43D3E2B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6A39E9-0727-45C6-989B-6511839CA6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6A39E9-0727-45C6-989B-6511839CA6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6A39E9-0727-45C6-989B-6511839CA6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6A39E9-0727-45C6-989B-6511839CA6C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
