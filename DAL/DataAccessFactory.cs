@@ -25,6 +25,10 @@ namespace DAL
         {
             return new JobRepo(db);
         }
+        public static IRepository<JobPost, int> JobPostDataAccess()
+        {
+            return new JobPostRepo(db);
+        }
         public static IRepository<Answer, int> AnswerDataAccess()
         {
             return new AnswerRepo(db);
