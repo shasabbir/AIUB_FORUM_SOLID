@@ -2,7 +2,7 @@
 
 namespace DAL
 {
-    public interface IRepositoryN<T,ID>
+    public interface IRepository<T,ID>
     {
         bool Add(T obj);
         T Get(ID id);

@@ -10,11 +10,11 @@ namespace BLL.Services
     public class StudentService
     {
         public static bool AuthenticateStudent(string uname, string pass) { 
-            var  rt = DataAccessFactoryN.AuthAccess().Authenticate(uname, pass);
+            var  rt = DataAccessFactory.AuthAccess().Authenticate(uname, pass);
             return rt;
         }
         public static UserModel Get(int id) {
-            var st = DataAccessFactoryN.UserDataAccess().Get(id);
+            var st = DataAccessFactory.UserDataAccess().Get(id);
             var s = new UserModel() { 
                UserId = st.UserId,
                Password = st.Password,
@@ -32,7 +32,7 @@ namespace BLL.Services
             return s;
         }
         public static List<UserModel> Get() {
-            var sts = DataAccessFactoryN.UserDataAccess().Get();
+            var sts = DataAccessFactory.UserDataAccess().Get();
             return sts.Select(s => new UserModel()
             {
                 UserId = s.UserId,
@@ -48,12 +48,11 @@ namespace BLL.Services
                 Reputation = s.Reputation,
                 UserType = s.UserType
             }).ToList();
-
         }
         public static List<UserModel> GetAll() {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<User, UserModel>());
             var mapper = new Mapper(config);
-            var data = mapper.Map<List<UserModel>>(DataAccessFactoryN.UserDataAccess().Get());
+            var data = mapper.Map<List<UserModel>>(DataAccessFactory.UserDataAccess().Get());
             return data;
         }
     }

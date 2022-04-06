@@ -4,7 +4,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    internal class VoteRepo : IRepositoryN<Vote, int>
+    internal class VoteRepo : IRepository<Vote, int>
     {
         private AIUB_ForumEntities db;
 
@@ -21,7 +21,7 @@ namespace DAL.Repo
 
         public Vote Get(int id)
         {
-            return db.Votes.FirstOrDefault(x => x.VoteId == id);;
+            return db.Votes.FirstOrDefault(x => x.VoteId == id);
         }
 
         public List<Vote> Get()

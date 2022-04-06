@@ -4,7 +4,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    public class PostRepo : IRepositoryN<Post, int>
+    public class PostRepo : IRepository<Post, int>
     {
          private AIUB_ForumEntities db;
 

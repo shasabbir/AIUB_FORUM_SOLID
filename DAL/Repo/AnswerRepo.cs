@@ -3,7 +3,7 @@ using DAL.Database;
 
 namespace DAL.Repo
 {
-    public class AnswerRepo : IRepositoryN<Answer, int>
+    public class AnswerRepo : IRepository<Answer, int>
     {
         private AIUB_ForumEntities db;
 
