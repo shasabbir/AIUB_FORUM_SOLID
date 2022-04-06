@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DAL.Database;
 
 namespace DAL.Repo
@@ -14,27 +15,33 @@ namespace DAL.Repo
 
         public bool Add(Job obj)
         {
-            throw new System.NotImplementedException();
+            db.Jobs.Add(obj);
+            return db.SaveChanges() != 0;
         }
 
         public Job Get(int id)
         {
-            throw new System.NotImplementedException();
+            return db.Jobs.FirstOrDefault(x => x.JobId == id);
         }
 
         public List<Job> Get()
         {
-            throw new System.NotImplementedException();
+            return db.Jobs.ToList();
         }
 
         public bool Edit(Job obj)
         {
-            throw new System.NotImplementedException();
+            var p = db.Jobs.FirstOrDefault(en => en.JobId == obj.JobId);
+            db.Entry(p).CurrentValues.SetValues(obj.JobId);
+            return db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var c = db.Jobs.FirstOrDefault(e => e.JobId == id);
+            if (c == null) return false;
+            db.Jobs.Remove(c);
+            return true;
         }
     }
 }
