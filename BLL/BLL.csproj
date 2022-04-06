@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BadgeModel.cs" />
+    <Compile Include="Entities\UserBadgeModel.cs" />
     <Compile Include="Entities\UserModel.cs" />
+    <Compile Include="Entities\UserPostModel.cs" />
+    <Compile Include="Entities\UserVoteModel.cs" />
     <Compile Include="Entities\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BadgeServices.cs" />
