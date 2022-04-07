@@ -26,6 +26,7 @@ namespace DAL.Database
             this.Moderators = new HashSet<Moderator>();
             this.Posts = new HashSet<Post>();
             this.Votes = new HashSet<Vote>();
+            this.Tokens = new HashSet<Token>();
         }
     
         public int UserId { get; set; }
@@ -52,5 +53,6 @@ namespace DAL.Database
         public virtual ICollection<Moderator> Moderators { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<Vote> Votes { get; set; }
+        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

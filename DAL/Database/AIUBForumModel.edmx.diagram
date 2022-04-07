@@ -37,6 +37,7 @@
         <AssociationConnector Association="AIUB_ForumModel.FK_Posts_User" ManuallyRouted="false" />
         <AssociationConnector Association="AIUB_ForumModel.FK_Votes_Posts" ManuallyRouted="false" />
         <AssociationConnector Association="AIUB_ForumModel.FK_Votes_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AIUB_ForumModel.FK_Tokens_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

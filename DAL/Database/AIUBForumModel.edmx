@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AIUB_ForumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AIUB_ForumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="AdminId" />
@@ -358,6 +358,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tokens_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Tokens" Type="Self.Tokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Votes_Posts">
           <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
           <End Role="Votes" Type="Self.Votes" Multiplicity="*" />
@@ -461,6 +473,10 @@
             <End Role="User" EntitySet="User" />
             <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tokens_User" Association="Self.FK_Tokens_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
           <AssociationSet Name="FK_Votes_Posts" Association="Self.FK_Votes_Posts">
             <End Role="Posts" EntitySet="Posts" />
             <End Role="Votes" EntitySet="Votes" />
@@ -470,8 +486,7 @@
             <End Role="Votes" EntitySet="Votes" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AIUB_ForumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -631,6 +646,7 @@
           <Property Name="Tkey" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DeletionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="AIUB_ForumModel.FK_Tokens_User" FromRole="Token" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -659,6 +675,7 @@
           <NavigationProperty Name="Moderators" Relationship="Self.FK_Moderator_User" FromRole="User" ToRole="Moderators" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_User" FromRole="User" ToRole="Posts" />
           <NavigationProperty Name="Votes" Relationship="Self.FK_Votes_User" FromRole="User" ToRole="Votes" />
+          <NavigationProperty Name="Tokens" Relationship="AIUB_ForumModel.FK_Tokens_User" FromRole="User" ToRole="Token" />
         </EntityType>
         <EntityType Name="Vote">
           <Key>
@@ -975,7 +992,23 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Votes" EntitySet="Votes" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tokens_User" Association="AIUB_ForumModel.FK_Tokens_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Token" EntitySet="Tokens" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Tokens_User">
+          <End Type="AIUB_ForumModel.User" Role="User" Multiplicity="1" />
+          <End Type="AIUB_ForumModel.Token" Role="Token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Token">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
