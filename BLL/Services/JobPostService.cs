@@ -2,11 +2,8 @@
 using BLL.Entities;
 using DAL;
 using DAL.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -19,9 +16,9 @@ namespace BLL.Services
             var s = new JobPostModel()
             {
                 JPId = st.JPId,
-               JPCreationDate = st.JPCreationDate,
-               JPDeleteDate = st.JPDeleteDate,
-               Body = st.Body,
+                JPCreationDate = st.JPCreationDate,
+                JPDeleteDate = st.JPDeleteDate,
+                Body = st.Body,
                 JobId = st.JobId,
                 Title = st.Title,
             };

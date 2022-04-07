@@ -2,30 +2,27 @@
 using BLL.Entities;
 using DAL;
 using DAL.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
     public class CompanyService
     {
         public static CompanyModel Get(int id)
-       
+
         {
             var st = DataAccessFactory.CompanyDataAccess().Get(id);
             var s = new CompanyModel()
             {
                 CompanyId = st.CompanyId,
                 UserId = st.UserId,
-               JobPostCount = st.JobPostCount,
-               CompanyName = st.CompanyName,
-               Location = st.Location,
-               CDescription = st.CDescription,
-               CCategory = st.CCategory,
-               Email = st.Email
+                JobPostCount = st.JobPostCount,
+                CompanyName = st.CompanyName,
+                Location = st.Location,
+                CDescription = st.CDescription,
+                CCategory = st.CCategory,
+                Email = st.Email
             };
             return s;
         }

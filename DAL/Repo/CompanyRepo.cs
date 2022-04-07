@@ -39,7 +39,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.Companies.FirstOrDefault(e => e.CompanyId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Companies.Remove(c);
             return true;
         }
