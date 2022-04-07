@@ -20,7 +20,7 @@ namespace DAL.Repo
 
         public Badge Get(int id)
         {
-            return db.Badges.FirstOrDefault(x => x.UserId == id);
+            return db.Badges.FirstOrDefault(x => x.BadgeId == id);
         }
 
         public List<Badge> Get()
@@ -31,7 +31,7 @@ namespace DAL.Repo
         public bool Edit(Badge obj)
         {
             var p = db.Badges.FirstOrDefault(en => en.BadgeId == obj.BadgeId);
-            db.Entry(p).CurrentValues.SetValues(obj.UserId);
+            db.Entry(p).CurrentValues.SetValues(obj.BadgeId);
             return db.SaveChanges() != 0;
         }
 
