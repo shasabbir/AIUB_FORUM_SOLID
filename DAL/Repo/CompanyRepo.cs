@@ -1,5 +1,7 @@
 ﻿using DAL.Database;
 using System.Collections.Generic;
+using System.Linq;
+using DAL.Database;
 
 namespace DAL.Repo
 {
@@ -14,27 +16,33 @@ namespace DAL.Repo
 
         public bool Add(Company obj)
         {
-            throw new System.NotImplementedException();
+            db.Companies.Add(obj);
+            return db.SaveChanges() != 0;
         }
 
         public Company Get(int id)
         {
-            throw new System.NotImplementedException();
+            return db.Companies.FirstOrDefault(x => x.UserId == id);
         }
 
         public List<Company> Get()
         {
-            throw new System.NotImplementedException();
+            return db.Companies.ToList();
         }
 
         public bool Edit(Company obj)
         {
-            throw new System.NotImplementedException();
+            var p = db.Companies.FirstOrDefault(en => en.CompanyId == obj.CompanyId);
+            db.Entry(p).CurrentValues.SetValues(obj.CompanyId);
+            return db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var c = db.Companies.FirstOrDefault(e => e.CompanyId == id);
+            if (c == null) return false;
+            db.Companies.Remove(c);
+            return true;
         }
     }
 }
