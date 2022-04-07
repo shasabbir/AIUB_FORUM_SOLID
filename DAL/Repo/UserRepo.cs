@@ -4,10 +4,10 @@ using System.Linq;
 
 namespace DAL.Repo
 {
-    public class UserRepo : IRepository<User, int>,IAuth
+    public class UserRepo : IRepository<User, int>, IAuth
     {
         private AIUB_ForumEntities db;
-      
+
 
         public UserRepo(AIUB_ForumEntities db)
         {
@@ -40,7 +40,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.Users.FirstOrDefault(e => e.UserId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Users.Remove(c);
             return true;
         }
@@ -48,9 +52,9 @@ namespace DAL.Repo
         public bool Authenticate(string email, string pass)
         {
             var data = (from e in db.Users
-                where e.Password.Equals(pass) &&
-                      e.Email.Equals(email)
-                select e).FirstOrDefault();
+                        where e.Password.Equals(pass) &&
+                              e.Email.Equals(email)
+                        select e).FirstOrDefault();
             return data != null;
         }
     }

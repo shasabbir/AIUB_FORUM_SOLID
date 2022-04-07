@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using DAL.Database;
+using System.Collections.Generic;
 using System.Linq;
-using DAL.Database;
 
 namespace DAL.Repo
 {
     public class PostRepo : IRepository<Post, int>
     {
-         private AIUB_ForumEntities db;
+        private AIUB_ForumEntities db;
 
         public PostRepo(AIUB_ForumEntities db)
         {
@@ -21,7 +21,7 @@ namespace DAL.Repo
 
         public Post Get(int id)
         {
-            return db.Posts.FirstOrDefault(x => x.PostId == id);;
+            return db.Posts.FirstOrDefault(x => x.PostId == id); ;
         }
 
         public List<Post> Get()
@@ -39,7 +39,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.Posts.FirstOrDefault(e => e.PostId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Posts.Remove(c);
             return true;
         }

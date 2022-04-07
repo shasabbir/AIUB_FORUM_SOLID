@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using DAL.Database;
+﻿using DAL.Database;
+using System.Collections.Generic;
 
 namespace DAL.Repo
 {

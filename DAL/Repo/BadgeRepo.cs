@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using DAL.Database;
+using System.Collections.Generic;
 using System.Linq;
-using DAL.Database;
 
 namespace DAL.Repo
 {
-    public class BadgeRepo:IRepository<Badge,int>
+    public class BadgeRepo : IRepository<Badge, int>
     {
         private AIUB_ForumEntities db;
 
@@ -38,7 +38,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.Badges.FirstOrDefault(e => e.BadgeId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Badges.Remove(c);
             return true;
         }
