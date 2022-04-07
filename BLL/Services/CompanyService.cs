@@ -15,7 +15,7 @@ namespace BLL.Services
         public static CompanyModel Get(int id)
        
         {
-            var st = DataAccessFactory.CategoryDataAccess().Get(id);
+            var st = DataAccessFactory.CompanyDataAccess().Get(id);
             var s = new CompanyModel()
             {
                 CompanyId = st.CompanyId,
@@ -31,7 +31,7 @@ namespace BLL.Services
         }
         public static List<CompanyModel> Get()
         {
-            var sts = DataAccessFactory.CategoryDataAccess().Get();
+            var sts = DataAccessFactory.CompanyDataAccess().Get();
             return sts.Select(s => new CompanyModel()
             {
                 CompanyId = s.CompanyId,
@@ -48,7 +48,7 @@ namespace BLL.Services
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Company, CompanyModel>());
             var mapper = new Mapper(config);
-            var data = mapper.Map<List<CompanyModel>>(DataAccessFactory.CategoryDataAccess().Get());
+            var data = mapper.Map<List<CompanyModel>>(DataAccessFactory.CompanyDataAccess().Get());
             return data;
         }
     }

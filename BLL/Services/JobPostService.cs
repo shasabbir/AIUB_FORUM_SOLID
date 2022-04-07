@@ -45,7 +45,7 @@ namespace BLL.Services
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<JobPost, JobPostModel>());
             var mapper = new Mapper(config);
-            var data = mapper.Map<List<JobPostModel>>(DataAccessFactory.CategoryDataAccess().Get());
+            var data = mapper.Map<List<JobPostModel>>(DataAccessFactory.CompanyDataAccess().Get());
             return data;
         }
     }

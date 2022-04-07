@@ -18,7 +18,7 @@ namespace DAL
         {
             return new CommentRepo(db);
         }
-        public static IRepository<Company, int> CategoryDataAccess()
+        public static IRepository<Company, int> CompanyDataAccess()
         {
             return new CompanyRepo(db);
         }
