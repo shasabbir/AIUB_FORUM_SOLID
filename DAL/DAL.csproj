@@ -50,58 +50,61 @@
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Database\Admin.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUB_Forum_Model.Context.cs">
+    <Compile Include="Database\AIUBForumModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUB_Forum_Model.Context.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUB_Forum_Model.cs">
+    <Compile Include="Database\AIUBForumModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUB_Forum_Model.Designer.cs">
+    <Compile Include="Database\AIUBForumModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUB_Forum_Model.edmx</DependentUpon>
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Database\Answer.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\AnswerComment.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\AnswerVote.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Badge.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Comment.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Company.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Job.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\JobPost.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Moderator.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Post.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Token.cs">
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\User.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Vote.cs">
-      <DependentUpon>AIUB_Forum_Model.tt</DependentUpon>
+      <DependentUpon>AIUBForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="IAuth.cs" />
     <Compile Include="IRepository.cs" />
@@ -118,32 +121,30 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EntityDeploy Include="Database\AIUB_Forum_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AIUB_Forum_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Database\AIUB_Forum_Model.edmx.diagram">
-      <DependentUpon>AIUB_Forum_Model.edmx</DependentUpon>
+    <EntityDeploy Include="Database\AIUBForumModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AIUBForumModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\AIUBForumModel.edmx.diagram">
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\AIUB_Forum_Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AIUB_Forum_Model.Context.cs</LastGenOutput>
-      <DependentUpon>AIUB_Forum_Model.edmx</DependentUpon>
-    </Content>
-    <Content Include="Database\AIUB_Forum_Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AIUB_Forum_Model.edmx</DependentUpon>
-      <LastGenOutput>AIUB_Forum_Model.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Database\AIUBForumModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUBForumModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\AIUBForumModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUBForumModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

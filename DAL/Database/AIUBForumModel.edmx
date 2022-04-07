@@ -20,7 +20,7 @@
           <Property Name="AnsId" Type="int" Nullable="false" />
           <Property Name="Score" Type="int" Nullable="false" />
           <Property Name="Text" Type="varchar(max)" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="PostId" Type="int" Nullable="false" />
         </EntityType>
@@ -30,9 +30,9 @@
           </Key>
           <Property Name="AnsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Body" Type="varchar" MaxLength="500" Nullable="false" />
-          <Property Name="CreateDate" Type="date" Nullable="false" />
-          <Property Name="ModifyDate" Type="date" />
-          <Property Name="DeleteDate" Type="date" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="DeleteDate" Type="datetime" />
           <Property Name="PostId" Type="int" Nullable="false" />
           <Property Name="Score" Type="int" Nullable="false" />
           <Property Name="AnsUserId" Type="int" Nullable="false" />
@@ -44,7 +44,7 @@
           <Property Name="AnsVoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AnsId" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Value" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Badges">
@@ -54,7 +54,7 @@
           <Property Name="BadgeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Class" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Comments">
@@ -65,7 +65,7 @@
           <Property Name="PostId" Type="int" Nullable="false" />
           <Property Name="Score" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Text" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Companies">
@@ -86,8 +86,8 @@
             <PropertyRef Name="JPId" />
           </Key>
           <Property Name="JPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="JPCreationDate" Type="date" Nullable="false" />
-          <Property Name="JPDeleteDate" Type="date" />
+          <Property Name="JPCreationDate" Type="datetime" Nullable="false" />
+          <Property Name="JPDeleteDate" Type="datetime" />
           <Property Name="Views" Type="int" Nullable="false" />
           <Property Name="Body" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="JobId" Type="int" Nullable="false" />
@@ -116,9 +116,9 @@
             <PropertyRef Name="PostId" />
           </Key>
           <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreateDate" Type="date" Nullable="false" />
-          <Property Name="ModifyDate" Type="date" />
-          <Property Name="DeleteDate" Type="date" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="DeleteDate" Type="datetime" />
           <Property Name="Score" Type="int" Nullable="false" />
           <Property Name="views" Type="int" Nullable="false" />
           <Property Name="Body" Type="varchar" MaxLength="1000" Nullable="false" />
@@ -126,7 +126,17 @@
           <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AnswerCount" Type="int" Nullable="false" />
           <Property Name="ComentsCount" Type="int" Nullable="false" />
-          <Property Name="CloseDate" Type="date" />
+          <Property Name="CloseDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tokens">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Tkey" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="DeletionDate" Type="datetime" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -153,7 +163,7 @@
           <Property Name="VoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PostId" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Value" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Admin_User">
@@ -384,6 +394,7 @@
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Moderators" EntityType="Self.Moderators" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Votes" EntityType="Self.Votes" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Admin_User" Association="Self.FK_Admin_User">
@@ -480,7 +491,7 @@
           <Property Name="AnsId" Type="Int32" Nullable="false" />
           <Property Name="Score" Type="Int32" Nullable="false" />
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="PostId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Answer" Relationship="Self.FK_AnswerComments_Answers" FromRole="AnswerComments" ToRole="Answers" />
@@ -493,9 +504,9 @@
           </Key>
           <Property Name="AnsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Body" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifyDate" Type="DateTime" Precision="0" />
-          <Property Name="DeleteDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
           <Property Name="PostId" Type="Int32" Nullable="false" />
           <Property Name="Score" Type="Int32" Nullable="false" />
           <Property Name="AnsUserId" Type="Int32" Nullable="false" />
@@ -511,7 +522,7 @@
           <Property Name="AnsVoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AnsId" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Value" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Answer" Relationship="Self.FK_AnswerVotes_Answers" FromRole="AnswerVotes" ToRole="Answers" />
           <NavigationProperty Name="User" Relationship="Self.FK_AnswerVotes_User" FromRole="AnswerVotes" ToRole="User" />
@@ -523,7 +534,7 @@
           <Property Name="BadgeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Badges_User" FromRole="Badges" ToRole="User" />
         </EntityType>
@@ -535,7 +546,7 @@
           <Property Name="PostId" Type="Int32" Nullable="false" />
           <Property Name="Score" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Text" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Comments_Posts" FromRole="Comments" ToRole="Posts" />
           <NavigationProperty Name="User" Relationship="Self.FK_Comments_User" FromRole="Comments" ToRole="User" />
@@ -560,8 +571,8 @@
             <PropertyRef Name="JPId" />
           </Key>
           <Property Name="JPId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="JPCreationDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="JPDeleteDate" Type="DateTime" Precision="0" />
+          <Property Name="JPCreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JPDeleteDate" Type="DateTime" Precision="3" />
           <Property Name="Views" Type="Int32" Nullable="false" />
           <Property Name="Body" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="JobId" Type="Int32" Nullable="false" />
@@ -594,9 +605,9 @@
             <PropertyRef Name="PostId" />
           </Key>
           <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifyDate" Type="DateTime" Precision="0" />
-          <Property Name="DeleteDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="DeleteDate" Type="DateTime" Precision="3" />
           <Property Name="Score" Type="Int32" Nullable="false" />
           <Property Name="views" Type="Int32" Nullable="false" />
           <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
@@ -604,12 +615,22 @@
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AnswerCount" Type="Int32" Nullable="false" />
           <Property Name="ComentsCount" Type="Int32" Nullable="false" />
-          <Property Name="CloseDate" Type="DateTime" Precision="0" />
+          <Property Name="CloseDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="AnswerComments" Relationship="Self.FK_AnswerComments_Posts" FromRole="Posts" ToRole="AnswerComments" />
           <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_Posts" FromRole="Posts" ToRole="Answers" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Posts" FromRole="Posts" ToRole="Comments" />
           <NavigationProperty Name="User" Relationship="Self.FK_Posts_User" FromRole="Posts" ToRole="User" />
           <NavigationProperty Name="Votes" Relationship="Self.FK_Votes_Posts" FromRole="Posts" ToRole="Votes" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Tkey" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DeletionDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -646,7 +667,7 @@
           <Property Name="VoteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PostId" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Value" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Votes_Posts" FromRole="Votes" ToRole="Posts" />
           <NavigationProperty Name="User" Relationship="Self.FK_Votes_User" FromRole="Votes" ToRole="User" />
@@ -879,6 +900,7 @@
           <EntitySet Name="Jobs" EntityType="Self.Job" />
           <EntitySet Name="Moderators" EntityType="Self.Moderator" />
           <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="Tokens" EntityType="Self.Token" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Votes" EntityType="Self.Vote" />
           <AssociationSet Name="FK_Admin_User" Association="Self.FK_Admin_User">
@@ -1091,6 +1113,17 @@
                 <ScalarProperty Name="AnswerCount" ColumnName="AnswerCount" />
                 <ScalarProperty Name="ComentsCount" ColumnName="ComentsCount" />
                 <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="AIUB_ForumModel.Token">
+              <MappingFragment StoreEntitySet="Tokens">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Tkey" ColumnName="Tkey" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

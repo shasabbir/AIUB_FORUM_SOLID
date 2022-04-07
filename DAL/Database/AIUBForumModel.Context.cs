@@ -36,6 +36,7 @@ namespace DAL.Database
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Moderator> Moderators { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Token> Tokens { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Vote> Votes { get; set; }
     }
