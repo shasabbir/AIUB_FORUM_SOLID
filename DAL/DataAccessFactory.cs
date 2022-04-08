@@ -6,7 +6,7 @@ namespace DAL
     public class DataAccessFactory
     {
         static AIUB_ForumEntities db = new AIUB_ForumEntities();
-        public static IRepository<User, int> UserDataAccess()
+        public static IRepository<User, int, string> UserDataAccess()
         {
             return new UserRepo(db);
         }
@@ -53,5 +53,7 @@ namespace DAL
         {
             return new UserRepo(db);
         }
+
+
     }
 }

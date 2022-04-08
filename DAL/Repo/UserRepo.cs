@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DAL.Repo
 {
-    public class UserRepo : IRepository<User, int>, IAuth
+    public class UserRepo : IRepository<User, int, string>, IAuth
     {
         private AIUB_ForumEntities db;
 
@@ -18,16 +18,6 @@ namespace DAL.Repo
         {
             db.Users.Add(obj);
             return db.SaveChanges() != 0;
-        }
-
-        public User Get(int id)
-        {
-            return db.Users.FirstOrDefault(x => x.UserId == id);
-        }
-
-        public List<User> Get()
-        {
-            return db.Users.ToList();
         }
 
         public bool Edit(User obj)
@@ -48,6 +38,26 @@ namespace DAL.Repo
             db.Users.Remove(c);
             return true;
         }
+
+
+        public List<User> Get()
+        {
+            return db.Users.ToList();
+        }
+
+        public List<User> Search(string search)
+        {
+            var list = (from p in db.Users
+                        where p.Username.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+
+        public User Get(int id)
+        {
+            return db.Users.FirstOrDefault(e => e.UserId == id);
+        }
+
 
         public bool Authenticate(string email, string pass)
         {

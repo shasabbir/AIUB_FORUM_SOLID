@@ -1,6 +1,6 @@
-﻿using System;
+﻿using BLL.Entities;
+using BLL.Services;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -9,31 +9,46 @@ namespace AIUB_Forum_API.Controllers
 {
     public class UserController : ApiController
     {
-        // GET: api/User
-        public IEnumerable<string> Get()
+        [Route("api/users")]
+        [HttpGet]
+        public HttpResponseMessage GetUsers()
         {
-            return new string[] { "value1", "value2" };
+            return Request.CreateResponse(HttpStatusCode.OK, UserService.GetAllUsers());
+        }
+        [Route("api/users/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetUser(int id)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, UserService.GetUser(id));
+        }
+        [Route("api/users/search/{search}")]
+        [HttpGet]
+        public List<UserModel> GetSearchUsers(string search)
+        {
+            return UserService.GetSearchUsers(search);
+        }
+        [Route("api/users/create")]
+        [HttpPost]
+        public HttpResponseMessage Create(UserModel user)
+        {
+            UserService.AddUser(user);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+        [Route("api/users/edit")]
+        [HttpPost]
+        public HttpResponseMessage Edit(UserModel user)
+        {
+            UserService.EditUser(user);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+        [Route("api/users/delete/{id}")]
+        [HttpGet]
+        public HttpResponseMessage Delete(int id)
+        {
+            UserService.DeleteUser(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // GET: api/User/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST: api/User
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/User/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/User/5
-        public void Delete(int id)
-        {
-        }
     }
 }

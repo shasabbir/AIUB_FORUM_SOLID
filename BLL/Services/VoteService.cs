@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using BLL.Entities;
 using DAL;
 using DAL.Database;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL.Services
 {
@@ -32,7 +32,7 @@ namespace BLL.Services
                 Date = s.Date,
                 PostId = s.PostId,
                 Value = s.Value
-               
+
             }).ToList();
         }
         public static List<VoteModel> GetAll()
