@@ -5,11 +5,11 @@ namespace DAL.Repo
 {
     public class AnswerRepo : IRepository<Answer, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
         public AnswerRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public bool Add(Answer obj)

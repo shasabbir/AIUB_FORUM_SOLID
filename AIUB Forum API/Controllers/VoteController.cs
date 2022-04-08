@@ -1,35 +1,48 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using BLL.Entities;
+using BLL.Services;
 
 namespace AIUB_Forum_API.Controllers
 {
     public class VoteController : ApiController
     {
         // GET: api/Vote
-        public IEnumerable<string> Get()
+        [Route("api/votes")]
+        [HttpGet]
+        public HttpResponseMessage GetVotes()
         {
-            return new string[] { "value1", "value2" };
+            return Request.CreateResponse(HttpStatusCode.OK, VoteService.GetAllVotes());
         }
-
-        // GET: api/Vote/5
-        public string Get(int id)
+        [Route("api/votes/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetVote(int id)
         {
-            return "value";
+            return Request.CreateResponse(HttpStatusCode.OK, VoteService.GetVote(id));
         }
-
-        // POST: api/Vote
-        public void Post([FromBody] string value)
+       
+        [Route("api/votes/create")]
+        [HttpPost]
+        public HttpResponseMessage Create(VoteModel vote)
         {
+            VoteService.AddVote(vote);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
-
-        // PUT: api/Vote/5
-        public void Put(int id, [FromBody] string value)
+        [Route("api/votes/edit")]
+        [HttpPost]
+        public HttpResponseMessage Edit(VoteModel vote)
         {
+            VoteService.EditVote(vote);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
-
-        // DELETE: api/Vote/5
-        public void Delete(int id)
+        [Route("api/votes/delete/{id}")]
+        [HttpGet]
+        public HttpResponseMessage Delete(int id)
         {
+            VoteService.DeleteVote(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

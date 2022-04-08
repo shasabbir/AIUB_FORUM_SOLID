@@ -2,21 +2,21 @@
 
 namespace DAL
 {
-    public interface IRepository<T, ID, STRING>
+    public interface IRepository<T, TId, TString>
     {
         bool Add(T obj);
-        T Get(ID id);
+        T Get(TId id);
         List<T> Get();
         bool Edit(T obj);
-        bool Delete(ID id);
-        List<T> Search(STRING search);
+        bool Delete(TId id);
+        List<T> Search(TString search);
     }
-    public interface IRepository<T, ID>
+    public interface IRepository<T, TId>
     {
         bool Add(T obj);
         bool Edit(T u);
-        bool Delete(ID id);
-        T Get(ID id);
+        bool Delete(TId id);
+        T Get(TId id);
         List<T> Get();
     }
 }

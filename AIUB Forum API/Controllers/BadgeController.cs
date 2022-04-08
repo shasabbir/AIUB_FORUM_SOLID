@@ -1,35 +1,46 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using BLL.Entities;
+using BLL.Services;
 
 namespace AIUB_Forum_API.Controllers
 {
     public class BadgeController : ApiController
     {
-        // GET: api/Badge
-        public IEnumerable<string> Get()
+        [Route("api/Badges")]
+        [HttpGet]
+        public HttpResponseMessage GetBadges()
         {
-            return new string[] { "value1", "value2" };
+            return Request.CreateResponse(HttpStatusCode.OK, BadgeService.GetAllBadges());
         }
-
-        // GET: api/Badge/5
-        public string Get(int id)
+        [Route("api/Badges/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetBadge(int id)
         {
-            return "value";
+            return Request.CreateResponse(HttpStatusCode.OK, BadgeService.GetBadge(id));
         }
-
-        // POST: api/Badge
-        public void Post([FromBody] string value)
+        [Route("api/Badges/create")]
+        [HttpPost]
+        public HttpResponseMessage Create(BadgeModel badge)
         {
+            BadgeService.AddBadge(badge);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
-
-        // PUT: api/Badge/5
-        public void Put(int id, [FromBody] string value)
+        [Route("api/Badges/edit")]
+        [HttpPost]
+        public HttpResponseMessage Edit(BadgeModel badge)
         {
+            BadgeService.EditBadge(badge);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
-
-        // DELETE: api/Badge/5
-        public void Delete(int id)
+        [Route("api/Badges/delete/{id}")]
+        [HttpGet]
+        public HttpResponseMessage Delete(int id)
         {
+            BadgeService.DeleteBadge(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

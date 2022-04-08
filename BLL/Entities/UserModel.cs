@@ -14,6 +14,6 @@
         public byte[] ProfilePic { get; set; }
         public string UserType { get; set; }
         public int? ApplyCount { get; set; }
-        public byte[] CV { get; set; }
+        public byte[] Cv { get; set; }
     }
 }

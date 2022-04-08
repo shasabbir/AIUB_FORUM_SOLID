@@ -59,7 +59,7 @@
     <Compile Include="Entities\UserVoteModel.cs" />
     <Compile Include="Entities\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BadgeServices.cs" />
+    <Compile Include="Services\BadgeService.cs" />
     <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Services\JobPostService.cs" />
     <Compile Include="Services\JobService.cs" />

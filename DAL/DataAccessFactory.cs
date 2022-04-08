@@ -5,53 +5,53 @@ namespace DAL
 {
     public class DataAccessFactory
     {
-        static AIUB_ForumEntities db = new AIUB_ForumEntities();
+        static AIUB_ForumEntities _db = new AIUB_ForumEntities();
         public static IRepository<User, int, string> UserDataAccess()
         {
-            return new UserRepo(db);
+            return new UserRepo(_db);
         }
         public static IRepository<Post, int> PostDataAccess()
         {
-            return new PostRepo(db);
+            return new PostRepo(_db);
         }
         public static IRepository<Comment, int> CommentDataAccess()
         {
-            return new CommentRepo(db);
+            return new CommentRepo(_db);
         }
         public static IRepository<Company, int> CompanyDataAccess()
         {
-            return new CompanyRepo(db);
+            return new CompanyRepo(_db);
         }
         public static IRepository<Job, int> JobDataAccess()
         {
-            return new JobRepo(db);
+            return new JobRepo(_db);
         }
         public static IRepository<JobPost, int> JobPostDataAccess()
         {
-            return new JobPostRepo(db);
+            return new JobPostRepo(_db);
         }
         public static IRepository<Answer, int> AnswerDataAccess()
         {
-            return new AnswerRepo(db);
+            return new AnswerRepo(_db);
         }
         public static IRepository<AnswerComment, int> AnswerCommentDataAccess()
         {
-            return new AnswerCommentRepo(db);
+            return new AnswerCommentRepo(_db);
         }
         public static IRepository<Badge, int> BadgeDataAccess()
         {
-            return new BadgeRepo(db);
+            return new BadgeRepo(_db);
         }
         public static IRepository<Vote, int> VoteDataAccess()
         {
-            return new VoteRepo(db);
+            return new VoteRepo(_db);
         }
 
 
 
         public static IAuth AuthAccess()
         {
-            return new UserRepo(db);
+            return new UserRepo(_db);
         }
 
 

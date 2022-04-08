@@ -6,46 +6,46 @@ namespace DAL.Repo
 {
     public class JobPostRepo : IRepository<JobPost, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
 
         public JobPostRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
         public bool Add(JobPost obj)
         {
-            db.JobPosts.Add(obj);
-            return db.SaveChanges() != 0;
+            _db.JobPosts.Add(obj);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = db.JobPosts.FirstOrDefault(e => e.JPId == id);
+            var c = _db.JobPosts.FirstOrDefault(e => e.JPId == id);
             if (c == null)
             {
                 return false;
             }
 
-            db.JobPosts.Remove(c);
+            _db.JobPosts.Remove(c);
             return true;
         }
 
         public bool Edit(JobPost obj)
         {
-            var p = db.JobPosts.FirstOrDefault(en => en.JPId == obj.JPId);
-            db.Entry(p).CurrentValues.SetValues(obj.JPId);
-            return db.SaveChanges() != 0;
+            var p = _db.JobPosts.FirstOrDefault(en => en.JPId == obj.JPId);
+            _db.Entry(p).CurrentValues.SetValues(obj.JPId);
+            return _db.SaveChanges() != 0;
         }
 
         public JobPost Get(int id)
         {
-            return db.JobPosts.FirstOrDefault(x => x.JPId == id);
+            return _db.JobPosts.FirstOrDefault(x => x.JPId == id);
         }
 
         public List<JobPost> Get()
         {
-            return db.JobPosts.ToList();
+            return _db.JobPosts.ToList();
         }
     }
 }

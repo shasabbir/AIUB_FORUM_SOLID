@@ -6,45 +6,45 @@ namespace DAL.Repo
 {
     public class CompanyRepo : IRepository<Company, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
         public CompanyRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public bool Add(Company obj)
         {
-            db.Companies.Add(obj);
-            return db.SaveChanges() != 0;
+            _db.Companies.Add(obj);
+            return _db.SaveChanges() != 0;
         }
 
         public Company Get(int id)
         {
-            return db.Companies.FirstOrDefault(x => x.UserId == id);
+            return _db.Companies.FirstOrDefault(x => x.UserId == id);
         }
 
         public List<Company> Get()
         {
-            return db.Companies.ToList();
+            return _db.Companies.ToList();
         }
 
         public bool Edit(Company obj)
         {
-            var p = db.Companies.FirstOrDefault(en => en.CompanyId == obj.CompanyId);
-            db.Entry(p).CurrentValues.SetValues(obj.CompanyId);
-            return db.SaveChanges() != 0;
+            var p = _db.Companies.FirstOrDefault(en => en.CompanyId == obj.CompanyId);
+            _db.Entry(p).CurrentValues.SetValues(obj.CompanyId);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = db.Companies.FirstOrDefault(e => e.CompanyId == id);
+            var c = _db.Companies.FirstOrDefault(e => e.CompanyId == id);
             if (c == null)
             {
                 return false;
             }
 
-            db.Companies.Remove(c);
+            _db.Companies.Remove(c);
             return true;
         }
     }

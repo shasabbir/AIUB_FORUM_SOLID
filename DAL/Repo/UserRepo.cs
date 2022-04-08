@@ -6,48 +6,48 @@ namespace DAL.Repo
 {
     public class UserRepo : IRepository<User, int, string>, IAuth
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
 
         public UserRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public bool Add(User obj)
         {
-            db.Users.Add(obj);
-            return db.SaveChanges() != 0;
+            _db.Users.Add(obj);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Edit(User obj)
         {
-            var p = db.Users.FirstOrDefault(en => en.UserId == obj.UserId);
-            db.Entry(p).CurrentValues.SetValues(obj.UserId);
-            return db.SaveChanges() != 0;
+            var p = _db.Users.FirstOrDefault(en => en.UserId == obj.UserId);
+            _db.Entry(p).CurrentValues.SetValues(obj.UserId);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = db.Users.FirstOrDefault(e => e.UserId == id);
+            var c = _db.Users.FirstOrDefault(e => e.UserId == id);
             if (c == null)
             {
                 return false;
             }
 
-            db.Users.Remove(c);
+            _db.Users.Remove(c);
             return true;
         }
 
 
         public List<User> Get()
         {
-            return db.Users.ToList();
+            return _db.Users.ToList();
         }
 
         public List<User> Search(string search)
         {
-            var list = (from p in db.Users
+            var list = (from p in _db.Users
                         where p.Username.Contains(search)
                         select p).ToList();
             return list;
@@ -55,13 +55,13 @@ namespace DAL.Repo
 
         public User Get(int id)
         {
-            return db.Users.FirstOrDefault(e => e.UserId == id);
+            return _db.Users.FirstOrDefault(e => e.UserId == id);
         }
 
 
         public bool Authenticate(string email, string pass)
         {
-            var data = (from e in db.Users
+            var data = (from e in _db.Users
                         where e.Password.Equals(pass) &&
                               e.Email.Equals(email)
                         select e).FirstOrDefault();

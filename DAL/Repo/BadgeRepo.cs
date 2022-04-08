@@ -6,44 +6,44 @@ namespace DAL.Repo
 {
     public class BadgeRepo : IRepository<Badge, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
         public BadgeRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
         public bool Add(Badge obj)
         {
-            db.Badges.Add(obj);
-            return db.SaveChanges() != 0;
+            _db.Badges.Add(obj);
+            return _db.SaveChanges() != 0;
         }
 
         public Badge Get(int id)
         {
-            return db.Badges.FirstOrDefault(x => x.BadgeId == id);
+            return _db.Badges.FirstOrDefault(x => x.BadgeId == id);
         }
 
         public List<Badge> Get()
         {
-            return db.Badges.ToList();
+            return _db.Badges.ToList();
         }
 
         public bool Edit(Badge obj)
         {
-            var p = db.Badges.FirstOrDefault(en => en.BadgeId == obj.BadgeId);
-            db.Entry(p).CurrentValues.SetValues(obj.BadgeId);
-            return db.SaveChanges() != 0;
+            var p = _db.Badges.FirstOrDefault(en => en.BadgeId == obj.BadgeId);
+            _db.Entry(p).CurrentValues.SetValues(obj.BadgeId);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = db.Badges.FirstOrDefault(e => e.BadgeId == id);
+            var c = _db.Badges.FirstOrDefault(e => e.BadgeId == id);
             if (c == null)
             {
                 return false;
             }
 
-            db.Badges.Remove(c);
+            _db.Badges.Remove(c);
             return true;
         }
 

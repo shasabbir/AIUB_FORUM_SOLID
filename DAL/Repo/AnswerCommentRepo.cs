@@ -5,11 +5,11 @@ namespace DAL.Repo
 {
     public class AnswerCommentRepo : IRepository<AnswerComment, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
         public AnswerCommentRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public bool Add(AnswerComment obj)

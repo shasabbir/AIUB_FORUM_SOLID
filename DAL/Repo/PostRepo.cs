@@ -6,45 +6,45 @@ namespace DAL.Repo
 {
     public class PostRepo : IRepository<Post, int>
     {
-        private AIUB_ForumEntities db;
+        private AIUB_ForumEntities _db;
 
         public PostRepo(AIUB_ForumEntities db)
         {
-            this.db = db;
+            this._db = db;
         }
 
         public bool Add(Post obj)
         {
-            db.Posts.Add(obj);
-            return db.SaveChanges() != 0;
+            _db.Posts.Add(obj);
+            return _db.SaveChanges() != 0;
         }
 
         public Post Get(int id)
         {
-            return db.Posts.FirstOrDefault(x => x.PostId == id); ;
+            return _db.Posts.FirstOrDefault(x => x.PostId == id); ;
         }
 
         public List<Post> Get()
         {
-            return db.Posts.ToList();
+            return _db.Posts.ToList();
         }
 
         public bool Edit(Post obj)
         {
-            var p = db.Posts.FirstOrDefault(en => en.PostId == obj.PostId);
-            db.Entry(p).CurrentValues.SetValues(obj.PostId);
-            return db.SaveChanges() != 0;
+            var p = _db.Posts.FirstOrDefault(en => en.PostId == obj.PostId);
+            _db.Entry(p).CurrentValues.SetValues(obj.PostId);
+            return _db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = db.Posts.FirstOrDefault(e => e.PostId == id);
+            var c = _db.Posts.FirstOrDefault(e => e.PostId == id);
             if (c == null)
             {
                 return false;
             }
 
-            db.Posts.Remove(c);
+            _db.Posts.Remove(c);
             return true;
         }
     }
