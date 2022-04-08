@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fc8550a1ee184b3b98dafcdbb3e51ca4" Name="Diagram1">
-        <EntityTypeShape EntityType="AIUB_ForumModel.Admin" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AIUB_ForumModel.Admin" Width="1.5" PointX="3.375" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.AnswerComment" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.Answer" Width="1.5" PointX="8.25" PointY="19.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.AnswerVote" Width="1.5" PointX="10.5" PointY="16.875" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="AIUB_ForumModel.Job" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.Moderator" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.Post" Width="1.5" PointX="3" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AIUB_ForumModel.Token" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AIUB_ForumModel.Token" Width="1.5" PointX="0.875" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.User" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AIUB_ForumModel.Vote" Width="1.5" PointX="5.25" PointY="28.375" IsExpanded="true" />
         <AssociationConnector Association="AIUB_ForumModel.FK_Admin_User" ManuallyRouted="false" />

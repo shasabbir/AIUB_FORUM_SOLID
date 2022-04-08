@@ -48,7 +48,12 @@
     <Compile Include="Entities\CompanyModel.cs" />
     <Compile Include="Entities\JobModel.cs" />
     <Compile Include="Entities\JobPostModel.cs" />
+    <Compile Include="Entities\UserAnswerCommentModel.cs" />
+    <Compile Include="Entities\UserAnswerModel.cs" />
+    <Compile Include="Entities\UserAnswerVoteModel.cs" />
     <Compile Include="Entities\UserBadgeModel.cs" />
+    <Compile Include="Entities\UserCommentModel.cs" />
+    <Compile Include="Entities\UserCompanyModel.cs" />
     <Compile Include="Entities\UserModel.cs" />
     <Compile Include="Entities\UserPostModel.cs" />
     <Compile Include="Entities\UserVoteModel.cs" />

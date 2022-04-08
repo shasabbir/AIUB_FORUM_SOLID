@@ -14,3 +14,13 @@ C:\Users\User\source\repos\AIUB Forum Backend\BLL\obj\Debug\BLL.csproj.AssemblyR
 C:\Users\User\source\repos\AIUB Forum Backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\AIUB Forum Backend\BLL\obj\Debug\BLL.dll
 C:\Users\User\source\repos\AIUB Forum Backend\BLL\obj\Debug\BLL.pdb
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\BLL.dll
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\BLL.pdb
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\AutoMapper.dll
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\DAL.dll
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\DAL.pdb
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\DAL.dll.config
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\AutoMapper.xml
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\bin\Debug\EntityFramework.xml
+C:\Users\User\source\repos\AIUB Forum Backend\BLL\obj\Debug\BLL.csproj.CopyComplete
