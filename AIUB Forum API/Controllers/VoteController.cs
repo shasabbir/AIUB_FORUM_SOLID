@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using BLL.Entities;
+using BLL.Services;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BLL.Entities;
-using BLL.Services;
 
 namespace AIUB_Forum_API.Controllers
 {
@@ -22,7 +21,7 @@ namespace AIUB_Forum_API.Controllers
         {
             return Request.CreateResponse(HttpStatusCode.OK, VoteService.GetVote(id));
         }
-       
+
         [Route("api/votes/create")]
         [HttpPost]
         public HttpResponseMessage Create(VoteModel vote)

@@ -1,6 +1,6 @@
 ﻿namespace BLL.Entities
 {
-    internal class UserAnswerVoteModel
+    public class TokenModel
     {
     }
 }

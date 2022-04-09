@@ -117,6 +117,7 @@
     <Compile Include="Repo\JobPostRepo.cs" />
     <Compile Include="Repo\JobRepo.cs" />
     <Compile Include="Repo\PostRepo.cs" />
+    <Compile Include="Repo\TokenRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\VoteRepo.cs" />
   </ItemGroup>

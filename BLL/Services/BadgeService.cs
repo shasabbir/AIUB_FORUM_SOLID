@@ -3,7 +3,6 @@ using BLL.Entities;
 using DAL;
 using DAL.Database;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BLL.Services
 {
@@ -21,7 +20,7 @@ namespace BLL.Services
             var data = mapper.Map<List<BadgeModel>>(da.Get());
             return data;
         }
-        
+
 
         public static BadgeModel GetBadge(int id)
         {

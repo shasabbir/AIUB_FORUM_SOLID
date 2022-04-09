@@ -68,7 +68,6 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             var data = mapper.Map<User>(u);
             DataAccessFactory.UserDataAccess().Edit(data);
-
         }
 
         public static void DeleteUser(int id)

@@ -48,6 +48,8 @@
     <Compile Include="Entities\CompanyModel.cs" />
     <Compile Include="Entities\JobModel.cs" />
     <Compile Include="Entities\JobPostModel.cs" />
+    <Compile Include="Entities\TokenModel.cs" />
+    <Compile Include="Entities\TokenUserModel.cs" />
     <Compile Include="Entities\UserAnswerCommentModel.cs" />
     <Compile Include="Entities\UserAnswerModel.cs" />
     <Compile Include="Entities\UserAnswerVoteModel.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="Entities\UserCompanyModel.cs" />
     <Compile Include="Entities\UserModel.cs" />
     <Compile Include="Entities\UserPostModel.cs" />
+    <Compile Include="Entities\UserTokenModel.cs" />
     <Compile Include="Entities\UserVoteModel.cs" />
     <Compile Include="Entities\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Services\JobPostService.cs" />
     <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\TokenService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\VoteService.cs" />
   </ItemGroup>
