@@ -31,7 +31,7 @@ namespace DAL.Repo
         public bool Edit(Badge obj)
         {
             var p = _db.Badges.FirstOrDefault(en => en.BadgeId == obj.BadgeId);
-            _db.Entry(p).CurrentValues.SetValues(obj.BadgeId);
+            _db.Entry(p).CurrentValues.SetValues(obj);
             return _db.SaveChanges() != 0;
         }
 

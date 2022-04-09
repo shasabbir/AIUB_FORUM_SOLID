@@ -1,6 +1,7 @@
 ﻿using DAL.Database;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 
 namespace DAL.Repo
 {
@@ -23,7 +24,7 @@ namespace DAL.Repo
         public bool Edit(User obj)
         {
             var p = _db.Users.FirstOrDefault(en => en.UserId == obj.UserId);
-            _db.Entry(p).CurrentValues.SetValues(obj.UserId);
+            _db.Entry(p).CurrentValues.SetValues(obj);
             return _db.SaveChanges() != 0;
         }
 
@@ -34,7 +35,6 @@ namespace DAL.Repo
             {
                 return false;
             }
-
             _db.Users.Remove(c);
             return true;
         }

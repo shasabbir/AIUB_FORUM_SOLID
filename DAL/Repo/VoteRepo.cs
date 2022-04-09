@@ -32,7 +32,7 @@ namespace DAL.Repo
         public bool Edit(Vote obj)
         {
             var p = _db.Votes.FirstOrDefault(en => en.VoteId == obj.VoteId);
-            _db.Entry(p).CurrentValues.SetValues(obj.VoteId);
+            _db.Entry(p).CurrentValues.SetValues(obj);
             return _db.SaveChanges() != 0;
         }
 
