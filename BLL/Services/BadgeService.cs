@@ -34,7 +34,7 @@ namespace BLL.Services
             return data;
         }
 
-        public static void AddBadge(BadgeModel u)
+        public static bool AddBadge(BadgeModel u)
         {
             var config = new MapperConfiguration(c =>
             {
@@ -43,10 +43,10 @@ namespace BLL.Services
             });
             var mapper = new Mapper(config);
             var data = mapper.Map<Badge>(u);
-            DataAccessFactory.BadgeDataAccess().Add(data);
+            return DataAccessFactory.BadgeDataAccess().Add(data);
         }
 
-        public static void EditBadge(BadgeModel u)
+        public static bool EditBadge(BadgeModel u)
         {
             var config = new MapperConfiguration(c =>
             {
@@ -55,13 +55,13 @@ namespace BLL.Services
             });
             var mapper = new Mapper(config);
             var data = mapper.Map<Badge>(u);
-            DataAccessFactory.BadgeDataAccess().Edit(data);
+            return DataAccessFactory.BadgeDataAccess().Edit(data);
 
         }
 
-        public static void DeleteBadge(int id)
+        public static bool DeleteBadge(int id)
         {
-            DataAccessFactory.BadgeDataAccess().Delete(id);
+            return DataAccessFactory.BadgeDataAccess().Delete(id);
         }
     }
 }

@@ -13,42 +13,77 @@ namespace AIUB_Forum_API.Controllers
         [HttpGet]
         public HttpResponseMessage GetUsers()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, UserService.GetAllUsers());
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, UserService.GetAllUsers());
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
+            }
+           
         }
         [Route("api/users/{id}")]
         [HttpGet]
         public HttpResponseMessage GetUser(int id)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, UserService.GetUser(id));
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, UserService.GetUser(id));
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
+            }
+           
         }
         [Route("api/users/search/{search}")]
         [HttpGet]
         public List<UserModel> GetSearchUsers(string search)
         {
+
             return UserService.GetSearchUsers(search);
         }
         [Route("api/users/create")]
         [HttpPost]
         public HttpResponseMessage Create(UserModel user)
         {
-            UserService.AddUser(user);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, UserService.AddUser(user) ? "Created" : "not Created");
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "Server Error");
+            }
+            
         }
         [Route("api/users/edit")]
         [HttpPost]
         public HttpResponseMessage Edit(UserModel user)
         {
-            UserService.EditUser(user);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, UserService.EditUser(user) ? "Edited" : "not edited");
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "Server Error");
+            }
         }
         [Route("api/users/delete/{id}")]
         [HttpGet]
         public HttpResponseMessage Delete(int id)
         {
-            UserService.DeleteUser(id);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            try
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, UserService.DeleteUser(id) ? "Deleted" : "not Deleted");
+            }
+            catch
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "Server Error");
+            }
+            
         }
-
-
     }
 }
