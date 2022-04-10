@@ -1,9 +1,6 @@
 ﻿using DAL.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
@@ -25,7 +22,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.JobPosts.FirstOrDefault(e => e.JPId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.JobPosts.Remove(c);
             return db.SaveChanges() != 0; ;
         }

@@ -2,11 +2,8 @@
 using BLL.Entities;
 using DAL;
 using DAL.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -18,13 +15,13 @@ namespace BLL.Services
             var st = DataAccessFactory.JobDataAccess().Get(id);
             var s = new JobModel()
             {
-                JobId = st.JobId,   
+                JobId = st.JobId,
                 CompanyId = st.CompanyId,
-                JobType = st.JobType,   
+                JobType = st.JobType,
                 PositonName = st.PositonName,
                 Description = st.Description,
                 Salary = st.Salary,
-               
+
             };
             return s;
         }
@@ -33,20 +30,20 @@ namespace BLL.Services
             var sts = DataAccessFactory.JobDataAccess().Get();
             return sts.Select(s => new JobModel()
             {
-                JobId = s.JobId,    
+                JobId = s.JobId,
                 CompanyId = s.CompanyId,
-               JobType= s.JobType,  
-               PositonName= s.PositonName,  
-               Description= s.Description,
-               Salary= s.Salary,
+                JobType = s.JobType,
+                PositonName = s.PositonName,
+                Description = s.Description,
+                Salary = s.Salary,
             }).ToList();
         }
-     
+
         public static void Add(JobModel j)
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<JobModel,Job>();
+                cfg.CreateMap<JobModel, Job>();
 
             });
             var mapper = new Mapper(config);
@@ -57,7 +54,7 @@ namespace BLL.Services
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap< JobModel, Job>();
+                cfg.CreateMap<JobModel, Job>();
 
             });
             var mapper = new Mapper(config);

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DAL.Database;
+using System.Collections.Generic;
 using System.Linq;
-using DAL.Database;
 
 namespace DAL.Repo
 {
@@ -39,7 +39,11 @@ namespace DAL.Repo
         public bool Delete(int id)
         {
             var c = db.Companies.FirstOrDefault(e => e.CompanyId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Companies.Remove(c);
             return db.SaveChanges() != 0; ;
         }

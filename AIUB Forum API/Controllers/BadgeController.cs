@@ -28,13 +28,13 @@ namespace AIUB_Forum_API.Controllers
         {
             try
             {
-                 return Request.CreateResponse(HttpStatusCode.OK, BadgeService.GetBadge(id));
+                return Request.CreateResponse(HttpStatusCode.OK, BadgeService.GetBadge(id));
             }
             catch
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
             }
-           
+
         }
         [Route("api/Badges/create")]
         [HttpPost]
@@ -42,7 +42,7 @@ namespace AIUB_Forum_API.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK,  BadgeService.AddBadge(badge) ? "Deleted" : "not Deleted");
+                return Request.CreateResponse(HttpStatusCode.OK, BadgeService.AddBadge(badge) ? "Deleted" : "not Deleted");
             }
             catch
             {

@@ -1,8 +1,5 @@
 ﻿using BLL.Entities;
 using BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -32,7 +29,7 @@ namespace AIUB_Web_Api.Controllers
         public HttpResponseMessage Create(JobPostModel Job)
         {
             JobPostService.Add(Job);
-            return Request.CreateResponse(HttpStatusCode.OK,"Created");
+            return Request.CreateResponse(HttpStatusCode.OK, "Created");
         }
 
         [Route("api/JobPost/edit")]
@@ -40,7 +37,7 @@ namespace AIUB_Web_Api.Controllers
         public HttpResponseMessage Edit(JobPostModel Job)
         {
             JobPostService.Edit(Job);
-            return Request.CreateResponse(HttpStatusCode.OK,"Edited");
+            return Request.CreateResponse(HttpStatusCode.OK, "Edited");
         }
 
         [Route("api/JobPost/delete/{id}")]
@@ -48,7 +45,7 @@ namespace AIUB_Web_Api.Controllers
         public HttpResponseMessage Delete(int id)
         {
             JobPostService.Delete(id);
-            return Request.CreateResponse(HttpStatusCode.OK,"Deleted");
+            return Request.CreateResponse(HttpStatusCode.OK, "Deleted");
         }
     }
 }

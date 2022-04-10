@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DAL.Database;
+using System.Collections.Generic;
 using System.Linq;
-using DAL.Database;
 
 namespace DAL.Repo
 {
@@ -32,15 +32,19 @@ namespace DAL.Repo
         public bool Edit(Job obj)
         {
 
-             var p = db.Jobs.FirstOrDefault(en => en.JobId == obj.JobId);
-             db.Entry(p).CurrentValues.SetValues(obj);
+            var p = db.Jobs.FirstOrDefault(en => en.JobId == obj.JobId);
+            db.Entry(p).CurrentValues.SetValues(obj);
             return db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
             var c = db.Jobs.FirstOrDefault(e => e.JobId == id);
-            if (c == null) return false;
+            if (c == null)
+            {
+                return false;
+            }
+
             db.Jobs.Remove(c);
             return db.SaveChanges() != 0; ;
         }

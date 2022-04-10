@@ -21,7 +21,7 @@ namespace AIUB_Forum_API.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
             }
-           
+
         }
         [Route("api/users/{id}")]
         [HttpGet]
@@ -35,7 +35,7 @@ namespace AIUB_Forum_API.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
             }
-           
+
         }
         [Route("api/users/search/{search}")]
         [HttpGet]
@@ -56,7 +56,7 @@ namespace AIUB_Forum_API.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "Server Error");
             }
-            
+
         }
         [Route("api/users/edit")]
         [HttpPost]
@@ -83,7 +83,7 @@ namespace AIUB_Forum_API.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "Server Error");
             }
-            
+
         }
     }
 }
