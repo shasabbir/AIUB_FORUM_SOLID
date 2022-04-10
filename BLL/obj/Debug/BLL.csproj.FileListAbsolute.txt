@@ -38,3 +38,17 @@ K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\BLL\obj\Debug\BLL.cspro
 K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\BLL\obj\Debug\BLL.csproj.CopyComplete
 K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\BLL\obj\Debug\BLL.dll
 K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\BLL\obj\Debug\BLL.pdb
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\obj\Debug\BLL.dll
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\obj\Debug\BLL.pdb
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\BLL.dll
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\BLL.pdb
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\AutoMapper.dll
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\DAL.dll
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\DAL.pdb
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\DAL.dll.config
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\AutoMapper.xml
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Sabbir\source\repos\final\AIUB-Forum-Backend\BLL\obj\Debug\BLL.csproj.CopyComplete

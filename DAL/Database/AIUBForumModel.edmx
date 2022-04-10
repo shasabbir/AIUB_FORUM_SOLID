@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AIUB_ForumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AIUBForumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="AdminId" />
@@ -394,7 +394,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AIUB_ForumModelStoreContainer">
+        <EntityContainer Name="AIUBForumModelStoreContainer">
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnswerComments" EntityType="Self.AnswerComments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
@@ -486,10 +486,11 @@
             <End Role="Votes" EntitySet="Votes" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AIUB_ForumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="AIUBForumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="AdminId" />
@@ -646,7 +647,7 @@
           <Property Name="Tkey" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DeletionDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="User" Relationship="AIUB_ForumModel.FK_Tokens_User" FromRole="Token" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Tokens_User" FromRole="Tokens" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -674,8 +675,8 @@
           <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_User" FromRole="User" ToRole="Companies" />
           <NavigationProperty Name="Moderators" Relationship="Self.FK_Moderator_User" FromRole="User" ToRole="Moderators" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_User" FromRole="User" ToRole="Posts" />
+          <NavigationProperty Name="Tokens" Relationship="Self.FK_Tokens_User" FromRole="User" ToRole="Tokens" />
           <NavigationProperty Name="Votes" Relationship="Self.FK_Votes_User" FromRole="User" ToRole="Votes" />
-          <NavigationProperty Name="Tokens" Relationship="AIUB_ForumModel.FK_Tokens_User" FromRole="User" ToRole="Token" />
         </EntityType>
         <EntityType Name="Vote">
           <Key>
@@ -893,6 +894,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tokens_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Tokens" Type="Self.Token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Votes_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Votes" Type="Self.Vote" Multiplicity="*" />
@@ -988,35 +1001,23 @@
             <End Role="Posts" EntitySet="Posts" />
             <End Role="Votes" EntitySet="Votes" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tokens_User" Association="Self.FK_Tokens_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
           <AssociationSet Name="FK_Votes_User" Association="Self.FK_Votes_User">
             <End Role="User" EntitySet="Users" />
             <End Role="Votes" EntitySet="Votes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tokens_User" Association="AIUB_ForumModel.FK_Tokens_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Token" EntitySet="Tokens" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Tokens_User">
-          <End Type="AIUB_ForumModel.User" Role="User" Multiplicity="1" />
-          <End Type="AIUB_ForumModel.Token" Role="Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AIUB_ForumModelStoreContainer" CdmEntityContainer="AIUB_ForumEntities">
+        <EntityContainerMapping StorageEntityContainer="AIUBForumModelStoreContainer" CdmEntityContainer="AIUB_ForumEntities">
           <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Admin">
+            <EntityTypeMapping TypeName="AIUBForumModel.Admin">
               <MappingFragment StoreEntitySet="Admins">
                 <ScalarProperty Name="AdminId" ColumnName="AdminId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1024,7 +1025,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AnswerComments">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerComment">
+            <EntityTypeMapping TypeName="AIUBForumModel.AnswerComment">
               <MappingFragment StoreEntitySet="AnswerComments">
                 <ScalarProperty Name="AnsCmntId" ColumnName="AnsCmntId" />
                 <ScalarProperty Name="AnsId" ColumnName="AnsId" />
@@ -1037,7 +1038,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Answers">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Answer">
+            <EntityTypeMapping TypeName="AIUBForumModel.Answer">
               <MappingFragment StoreEntitySet="Answers">
                 <ScalarProperty Name="AnsId" ColumnName="AnsId" />
                 <ScalarProperty Name="Body" ColumnName="Body" />
@@ -1051,7 +1052,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AnswerVotes">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerVote">
+            <EntityTypeMapping TypeName="AIUBForumModel.AnswerVote">
               <MappingFragment StoreEntitySet="AnswerVotes">
                 <ScalarProperty Name="AnsVoteId" ColumnName="AnsVoteId" />
                 <ScalarProperty Name="AnsId" ColumnName="AnsId" />
@@ -1062,7 +1063,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Badges">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Badge">
+            <EntityTypeMapping TypeName="AIUBForumModel.Badge">
               <MappingFragment StoreEntitySet="Badges">
                 <ScalarProperty Name="BadgeId" ColumnName="BadgeId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1073,7 +1074,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comments">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Comment">
+            <EntityTypeMapping TypeName="AIUBForumModel.Comment">
               <MappingFragment StoreEntitySet="Comments">
                 <ScalarProperty Name="CommentId" ColumnName="CommentId" />
                 <ScalarProperty Name="PostId" ColumnName="PostId" />
@@ -1085,7 +1086,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Companies">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Company">
+            <EntityTypeMapping TypeName="AIUBForumModel.Company">
               <MappingFragment StoreEntitySet="Companies">
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1099,7 +1100,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JobPosts">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.JobPost">
+            <EntityTypeMapping TypeName="AIUBForumModel.JobPost">
               <MappingFragment StoreEntitySet="JobPosts">
                 <ScalarProperty Name="JPId" ColumnName="JPId" />
                 <ScalarProperty Name="JPCreationDate" ColumnName="JPCreationDate" />
@@ -1112,7 +1113,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Jobs">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Job">
+            <EntityTypeMapping TypeName="AIUBForumModel.Job">
               <MappingFragment StoreEntitySet="Jobs">
                 <ScalarProperty Name="JobId" ColumnName="JobId" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1124,7 +1125,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Moderators">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Moderator">
+            <EntityTypeMapping TypeName="AIUBForumModel.Moderator">
               <MappingFragment StoreEntitySet="Moderators">
                 <ScalarProperty Name="ModeratorId" ColumnName="ModeratorId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1132,7 +1133,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Posts">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Post">
+            <EntityTypeMapping TypeName="AIUBForumModel.Post">
               <MappingFragment StoreEntitySet="Posts">
                 <ScalarProperty Name="PostId" ColumnName="PostId" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
@@ -1150,7 +1151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tokens">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Token">
+            <EntityTypeMapping TypeName="AIUBForumModel.Token">
               <MappingFragment StoreEntitySet="Tokens">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1161,7 +1162,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.User">
+            <EntityTypeMapping TypeName="AIUBForumModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -1180,7 +1181,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Votes">
-            <EntityTypeMapping TypeName="AIUB_ForumModel.Vote">
+            <EntityTypeMapping TypeName="AIUBForumModel.Vote">
               <MappingFragment StoreEntitySet="Votes">
                 <ScalarProperty Name="VoteId" ColumnName="VoteId" />
                 <ScalarProperty Name="PostId" ColumnName="PostId" />

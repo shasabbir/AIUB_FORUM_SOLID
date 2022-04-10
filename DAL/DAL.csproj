@@ -121,7 +121,18 @@
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\VoteRepo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database\AIUBForumModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUBForumModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\AIUBForumModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUBForumModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <EntityDeploy Include="Database\AIUBForumModel.edmx">
@@ -135,18 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\AIUBForumModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
-      <LastGenOutput>AIUBForumModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Database\AIUBForumModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
-      <LastGenOutput>AIUBForumModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,8 +25,8 @@ namespace DAL.Database
             this.Companies = new HashSet<Company>();
             this.Moderators = new HashSet<Moderator>();
             this.Posts = new HashSet<Post>();
-            this.Votes = new HashSet<Vote>();
             this.Tokens = new HashSet<Token>();
+            this.Votes = new HashSet<Vote>();
         }
     
         public int UserId { get; set; }
@@ -52,7 +52,7 @@ namespace DAL.Database
         public virtual ICollection<Company> Companies { get; set; }
         public virtual ICollection<Moderator> Moderators { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
-        public virtual ICollection<Vote> Votes { get; set; }
         public virtual ICollection<Token> Tokens { get; set; }
+        public virtual ICollection<Vote> Votes { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AIUB_ForumModelStoreContainer" CdmEntityContainer="AIUB_ForumEntities">
+  <EntityContainerMapping StorageEntityContainer="AIUBForumModelStoreContainer" CdmEntityContainer="AIUB_ForumEntities">
     <EntitySetMapping Name="Admins">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Admin">
+      <EntityTypeMapping TypeName="AIUBForumModel.Admin">
         <MappingFragment StoreEntitySet="Admins">
           <ScalarProperty Name="AdminId" ColumnName="AdminId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AnswerComments">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerComment">
+      <EntityTypeMapping TypeName="AIUBForumModel.AnswerComment">
         <MappingFragment StoreEntitySet="AnswerComments">
           <ScalarProperty Name="AnsCmntId" ColumnName="AnsCmntId" />
           <ScalarProperty Name="AnsId" ColumnName="AnsId" />
@@ -23,7 +23,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Answers">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Answer">
+      <EntityTypeMapping TypeName="AIUBForumModel.Answer">
         <MappingFragment StoreEntitySet="Answers">
           <ScalarProperty Name="AnsId" ColumnName="AnsId" />
           <ScalarProperty Name="Body" ColumnName="Body" />
@@ -37,7 +37,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AnswerVotes">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.AnswerVote">
+      <EntityTypeMapping TypeName="AIUBForumModel.AnswerVote">
         <MappingFragment StoreEntitySet="AnswerVotes">
           <ScalarProperty Name="AnsVoteId" ColumnName="AnsVoteId" />
           <ScalarProperty Name="AnsId" ColumnName="AnsId" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Badges">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Badge">
+      <EntityTypeMapping TypeName="AIUBForumModel.Badge">
         <MappingFragment StoreEntitySet="Badges">
           <ScalarProperty Name="BadgeId" ColumnName="BadgeId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -59,7 +59,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Comments">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Comment">
+      <EntityTypeMapping TypeName="AIUBForumModel.Comment">
         <MappingFragment StoreEntitySet="Comments">
           <ScalarProperty Name="CommentId" ColumnName="CommentId" />
           <ScalarProperty Name="PostId" ColumnName="PostId" />
@@ -71,7 +71,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Companies">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Company">
+      <EntityTypeMapping TypeName="AIUBForumModel.Company">
         <MappingFragment StoreEntitySet="Companies">
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -85,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="JobPosts">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.JobPost">
+      <EntityTypeMapping TypeName="AIUBForumModel.JobPost">
         <MappingFragment StoreEntitySet="JobPosts">
           <ScalarProperty Name="JPId" ColumnName="JPId" />
           <ScalarProperty Name="JPCreationDate" ColumnName="JPCreationDate" />
@@ -98,7 +98,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Jobs">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Job">
+      <EntityTypeMapping TypeName="AIUBForumModel.Job">
         <MappingFragment StoreEntitySet="Jobs">
           <ScalarProperty Name="JobId" ColumnName="JobId" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -110,7 +110,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Moderators">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Moderator">
+      <EntityTypeMapping TypeName="AIUBForumModel.Moderator">
         <MappingFragment StoreEntitySet="Moderators">
           <ScalarProperty Name="ModeratorId" ColumnName="ModeratorId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -118,7 +118,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Posts">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Post">
+      <EntityTypeMapping TypeName="AIUBForumModel.Post">
         <MappingFragment StoreEntitySet="Posts">
           <ScalarProperty Name="PostId" ColumnName="PostId" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
@@ -136,7 +136,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tokens">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Token">
+      <EntityTypeMapping TypeName="AIUBForumModel.Token">
         <MappingFragment StoreEntitySet="Tokens">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -147,7 +147,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.User">
+      <EntityTypeMapping TypeName="AIUBForumModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -166,7 +166,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Votes">
-      <EntityTypeMapping TypeName="AIUB_ForumModel.Vote">
+      <EntityTypeMapping TypeName="AIUBForumModel.Vote">
         <MappingFragment StoreEntitySet="Votes">
           <ScalarProperty Name="VoteId" ColumnName="VoteId" />
           <ScalarProperty Name="PostId" ColumnName="PostId" />
