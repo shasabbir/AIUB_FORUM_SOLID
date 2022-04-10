@@ -18,3 +18,13 @@ C:\Users\User\source\repos\AIUB Forum Backend\DAL\obj\Debug\DAL.csproj.CoreCompi
 C:\Users\User\source\repos\AIUB Forum Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\User\source\repos\AIUB Forum Backend\DAL\obj\Debug\DAL.dll
 C:\Users\User\source\repos\AIUB Forum Backend\DAL\obj\Debug\DAL.pdb
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\bin\Debug\DAL.dll.config
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\bin\Debug\DAL.dll
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\bin\Debug\DAL.pdb
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\bin\Debug\EntityFramework.dll
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\bin\Debug\EntityFramework.xml
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\obj\Debug\DAL.dll
+K:\Semester 9\Advance dot net\Z_FINAL\AIUB-Forum-Backend\DAL\obj\Debug\DAL.pdb

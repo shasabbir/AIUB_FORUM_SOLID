@@ -1,51 +1,48 @@
-﻿using DAL.Database;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using DAL.Database;
 
 namespace DAL.Repo
 {
     public class JobRepo : IRepository<Job, int>
     {
-        private AIUB_ForumEntities _db;
+        private AIUB_ForumEntities db;
 
         public JobRepo(AIUB_ForumEntities db)
         {
-            this._db = db;
+            this.db = db;
         }
 
         public bool Add(Job obj)
         {
-            _db.Jobs.Add(obj);
-            return _db.SaveChanges() != 0;
+            db.Jobs.Add(obj);
+            return db.SaveChanges() != 0;
         }
 
         public Job Get(int id)
         {
-            return _db.Jobs.FirstOrDefault(x => x.JobId == id);
+            return db.Jobs.FirstOrDefault(x => x.JobId == id);
         }
 
         public List<Job> Get()
         {
-            return _db.Jobs.ToList();
+            return db.Jobs.ToList();
         }
 
         public bool Edit(Job obj)
         {
-            var p = _db.Jobs.FirstOrDefault(en => en.JobId == obj.JobId);
-            _db.Entry(p).CurrentValues.SetValues(obj.JobId);
-            return _db.SaveChanges() != 0;
+
+             var p = db.Jobs.FirstOrDefault(en => en.JobId == obj.JobId);
+             db.Entry(p).CurrentValues.SetValues(obj);
+            return db.SaveChanges() != 0;
         }
 
         public bool Delete(int id)
         {
-            var c = _db.Jobs.FirstOrDefault(e => e.JobId == id);
-            if (c == null)
-            {
-                return false;
-            }
-
-            _db.Jobs.Remove(c);
-            return true;
+            var c = db.Jobs.FirstOrDefault(e => e.JobId == id);
+            if (c == null) return false;
+            db.Jobs.Remove(c);
+            return db.SaveChanges() != 0; ;
         }
     }
 }
