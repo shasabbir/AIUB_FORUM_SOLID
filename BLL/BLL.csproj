@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AdminModel.cs" />
     <Compile Include="Entities\AnswerCommentModel.cs" />
     <Compile Include="Entities\AnswerModel.cs" />
     <Compile Include="Entities\AnswerProperty.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Entities\CompanyModel.cs" />
     <Compile Include="Entities\JobModel.cs" />
     <Compile Include="Entities\JobPostModel.cs" />
+    <Compile Include="Entities\LoginModel.cs" />
+    <Compile Include="Entities\ModeratorModel.cs" />
     <Compile Include="Entities\PostModel.cs" />
     <Compile Include="Entities\PostProperty.cs" />
     <Compile Include="Entities\TokenModel.cs" />
@@ -68,13 +71,16 @@
     <Compile Include="Entities\UserVoteModel.cs" />
     <Compile Include="Entities\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\AnswerCommentServices.cs" />
     <Compile Include="Services\AnswerServices.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\BadgeService.cs" />
     <Compile Include="Services\CommentServices.cs" />
     <Compile Include="Services\CompanyService.cs" />
     <Compile Include="Services\JobPostService.cs" />
     <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\ModeratorService.cs" />
     <Compile Include="Services\PostServices.cs" />
     <Compile Include="Services\TokenService.cs" />
     <Compile Include="Services\UserService.cs" />

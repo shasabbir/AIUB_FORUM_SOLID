@@ -50,102 +50,105 @@
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Database\Admin.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUBForumModel.Context.cs">
+    <Compile Include="Database\AIUB_ForumModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUBForumModel.Context.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUBForumModel.cs">
+    <Compile Include="Database\AIUB_ForumModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\AIUBForumModel.Designer.cs">
+    <Compile Include="Database\AIUB_ForumModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Database\Answer.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\AnswerComment.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\AnswerVote.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Badge.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Comment.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Company.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Job.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\JobPost.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Moderator.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Post.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Token.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\User.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Vote.cs">
-      <DependentUpon>AIUBForumModel.tt</DependentUpon>
+      <DependentUpon>AIUB_ForumModel.tt</DependentUpon>
     </Compile>
     <Compile Include="IAuth.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repo\AdminRepo.cs" />
     <Compile Include="Repo\AnswerCommentRepo.cs" />
     <Compile Include="Repo\AnswerRepo.cs" />
+    <Compile Include="Repo\AuthRepo.cs" />
     <Compile Include="Repo\BadgeRepo.cs" />
     <Compile Include="Repo\CommentRepo.cs" />
     <Compile Include="Repo\CompanyRepo.cs" />
     <Compile Include="Repo\JobPostRepo.cs" />
     <Compile Include="Repo\JobRepo.cs" />
+    <Compile Include="Repo\ModeratorRepo.cs" />
     <Compile Include="Repo\PostRepo.cs" />
     <Compile Include="Repo\TokenRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\VoteRepo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\AIUBForumModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
-      <LastGenOutput>AIUBForumModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Database\AIUBForumModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
-      <LastGenOutput>AIUBForumModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Database\AIUBForumModel.edmx">
+    <EntityDeploy Include="Database\AIUB_ForumModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AIUBForumModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AIUB_ForumModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Database\AIUBForumModel.edmx.diagram">
-      <DependentUpon>AIUBForumModel.edmx</DependentUpon>
+    <None Include="Database\AIUB_ForumModel.edmx.diagram">
+      <DependentUpon>AIUB_ForumModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\AIUB_ForumModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUB_ForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUB_ForumModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\AIUB_ForumModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIUB_ForumModel.edmx</DependentUpon>
+      <LastGenOutput>AIUB_ForumModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

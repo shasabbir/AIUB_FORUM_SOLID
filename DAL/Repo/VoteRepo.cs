@@ -6,7 +6,7 @@ namespace DAL.Repo
 {
     internal class VoteRepo : IRepository<Vote, int>
     {
-        private AIUB_ForumEntities _db;
+        private readonly AIUB_ForumEntities _db;
 
         public VoteRepo(AIUB_ForumEntities db)
         {

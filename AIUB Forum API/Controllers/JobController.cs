@@ -1,5 +1,8 @@
 ﻿using BLL.Entities;
 using BLL.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -45,7 +48,26 @@ namespace AIUB_Web_Api.Controllers
         public HttpResponseMessage Delete(int id)
         {
             JobService.Delete(id);
-            return Request.CreateResponse(HttpStatusCode.OK, "Deleted");
+            return Request.CreateResponse(HttpStatusCode.OK,"Deleted");
         }
+
+        [Route("api/Job/GetByCompanyId/{id}")]
+        [HttpGet]
+        public HttpResponseMessage GetByCompanyId(int id)
+        {  
+            var cp = JobService.GetByCompanyId(id);
+            return Request.CreateResponse(HttpStatusCode.OK, cp);
+            
+        }
+        [Route("api/Job/GetByPostion/{Postion}")]
+        [HttpGet]
+        public HttpResponseMessage GetByPositionName(string Postion)
+        {
+            var cp = JobService.GetByPositionName(Postion);
+            return Request.CreateResponse(HttpStatusCode.OK, cp);
+
+        }
+
+
     }
 }

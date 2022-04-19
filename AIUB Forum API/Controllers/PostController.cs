@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AIUB_Forum_API.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,6 +13,7 @@ namespace AIUB_Forum_API.Controllers
     public class PostController : ApiController
     {
         [HttpGet]
+        [AdminAccess]
         [Route("api/Post/get/{id}")]
         public HttpResponseMessage Get(int id)
         {

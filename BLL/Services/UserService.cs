@@ -8,6 +8,7 @@ namespace BLL.Services
 {
     public class UserService
     {
+
         public static List<UserModel> GetAllUsers()
         {
             var config = new MapperConfiguration(c =>

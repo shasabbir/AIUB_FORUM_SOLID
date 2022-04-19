@@ -1,4 +1,5 @@
-﻿using BLL.Entities;
+﻿using AIUB_Forum_API.Auth;
+using BLL.Entities;
 using BLL.Services;
 using System.Collections.Generic;
 using System.Net;
@@ -11,6 +12,7 @@ namespace AIUB_Forum_API.Controllers
     {
         [Route("api/users")]
         [HttpGet]
+        [AdminAccess]
         public HttpResponseMessage GetUsers()
         {
             try
@@ -39,6 +41,9 @@ namespace AIUB_Forum_API.Controllers
         }
         [Route("api/users/search/{search}")]
         [HttpGet]
+        //[AdminAccess]
+        //[ModeratorAccess]
+        //[UserAccess]
         public List<UserModel> GetSearchUsers(string search)
         {
 

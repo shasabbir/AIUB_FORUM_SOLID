@@ -6,7 +6,7 @@ namespace DAL.Repo
 {
     public class BadgeRepo : IRepository<Badge, int>
     {
-        private AIUB_ForumEntities _db;
+        private readonly AIUB_ForumEntities _db;
 
         public BadgeRepo(AIUB_ForumEntities db)
         {

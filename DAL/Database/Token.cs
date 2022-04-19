@@ -18,7 +18,7 @@ namespace DAL.Database
         public int UserId { get; set; }
         public string Tkey { get; set; }
         public System.DateTime CreationDate { get; set; }
-        public Nullable<System.DateTime> DeletionDate { get; set; }
+        public Nullable<System.DateTime> ExpireDate { get; set; }
     
         public virtual User User { get; set; }
     }

@@ -46,12 +46,22 @@ namespace DAL
         {
             return new VoteRepo(_db);
         }
-
-
-
-        public static IAuth AuthAccess()
+        public static IRepository<Admin, int> AdminDataAccess()
         {
-            return new UserRepo(_db);
+            return new AdminRepo(_db);
+        }
+        public static IRepository<Moderator, int> ModeratorDataAccess()
+        {
+            return new ModeratorRepo(_db);
+        }
+
+        public static IAuth<Token> AuthDataAccess()
+        {
+            return new AuthRepo(_db);
+        }
+        public static IRepository<Token, string> TokenDataAccess()
+        {
+            return new AuthRepo(_db);
         }
 
 
